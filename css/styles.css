@@ -1,1 +1,79 @@
-/* ini css
+/* ini css */
+
+.main-title{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+main{
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+}
+
+form {
+    padding: 12px;
+    background: linear-gradient(30deg, #d0ecf5, #f2f4f7);
+}
+
+aside{
+    padding: 48px;
+}
+
+.button{
+    height: 32px;
+    border: none;
+    border-radius: 4px;
+    height: 32px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.form-btn-container{
+    margin-top: 24px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.bg-hitung{
+    background-color: #8aaee0;
+    margin-right: 5px;
+}
+
+.bg-reset{
+    background-color: #d5deef;
+    margin-left: 5px;
+}
+
+input [type=number]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: monospace;
+    font-size: 14px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.list{
+    padding: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.box{
+    padding: 12px;
+    background-color: #deeafd;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+footer{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #deeafd;
+}
