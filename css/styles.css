@@ -1,25 +1,41 @@
 /* ini css */
 
-.main-title{
-    font-family: 'Poppins', sans-serif;
+/* css untuk header web */
+.main-tittle {
     text-align: center;
+    background-color: #dddddd;
+    border-radius: 0 0 55px 55px;
+    padding: 16px;
+    font-variant: all-petite-caps;
 }
 
-main{
-    font-family: 'Poppins', sans-serif;
+header h1{ /* style untuk tag header1 pada header*/
+    font-size: 43px;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+}
+
+header p{ /* style untuk tag p pada header*/
+    font-size: 18px;
+    letter-spacing: 3px;
+    margin-top: 0;
+    margin-bottom: 22.5px;
+}
+
+/* css untuk tag main */
+main {
     display: flex;
 }
 
+/* css untuk tag form*/
 form {
     padding: 12px;
-    background: linear-gradient(30deg, #d0ecf5, #f2f4f7);
+    background: linear-gradient(30deg, #e8e8e8, #f2f4f7);
+    border-radius: 16px;
+    transition: background 0.5s ease;
 }
 
-aside{
-    padding: 48px;
-}
-
-.button{
+.button { /* style class button */
     height: 32px;
     border: none;
     border-radius: 4px;
@@ -29,23 +45,22 @@ aside{
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.form-btn-container{
+.form-btn-container { /* style class form button */
     margin-top: 24px;
     margin-bottom: 16px;
-    text-align: center;
 }
 
-.bg-hitung{
-    background-color: #8aaee0;
+.bg-hitung { /* style class background button hitung */
+    background-color: #dddddd;
     margin-right: 5px;
 }
 
-.bg-reset{
-    background-color: #d5deef;
+.bg-reset { /* style class background button reset */
+    background-color: #f5f2ed;
     margin-left: 5px;
 }
 
-input [type=number]{
+input [type=number] { /* style untuk inputan dengan type number */
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -58,22 +73,125 @@ input [type=number]{
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.list{
+/* css untuk sisi kanan dan kiri web*/
+aside {
+    padding: 48px;
+}
+
+.list { /* style class list */
     padding: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
     margin-top: auto;
     margin-bottom: auto;
 }
 
-.box{
+.box { /* style class box */
+    display: none;
     padding: 12px;
-    background-color: #deeafd;
+    background: linear-gradient(30deg, #e8e8e8, #f2f4f7);
     padding-bottom: 3px;
     padding-top: 3px;
+    border-radius: 16px;
 }
 
-footer{
-    font-family: 'Poppins', sans-serif;
+.icon { /* style class icon */
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.icon a img { /* style class icon dengan tag a dan img */
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-evenly;
+    height: auto;
+    width: 50px;
+}
+
+/* css untuk bagian footer */
+footer {
     text-align: center;
     padding: 20px;
-    background-color: #deeafd;
+    background-color: #abaaa8;
+    border: 0;
+    border-radius: 50px 50px 0 0;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    letter-spacing: 4.5px;
+}
+
+footer p{ /* style bagian footer dengan tag p */
+    font-size: 35px;
+    margin: 15px;
+    font-weight: bolder;
+    margin-bottom: 0;
+    letter-spacing: 5px;
+}
+
+/* Warna untuk hasil BMI */
+.blue {
+    color: #3b6bac;
+}
+
+.green {
+    color: #87b2a3;
+}
+
+.orange{
+    color: #d89a80;
+}
+
+.red {
+    color: #b93a10;
+}
+
+.blink {
+    animation: blink 1.65s step-start infinite;
+    text-align: center;
+    font-size: medium;
+    margin-bottom: 30px;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Efek animasi hasil BMI*/
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* style default untuk layar besar (desktop/tablet) */
+#hasilBMI{
+    font-size: 300%;
+    text-align: center;
+    font-weight: bold;
+    margin: auto;
+    margin-top: 30px;
+}
+
+/* style untuk layar kecil (HP) */
+@media (max-width: 600px) {
+    main {
+        flex-direction: column;
+    }
+    aside{
+        padding-top: 10%;
+        padding-bottom: 0;
+    }
+    footer{
+        margin-top: 80px;
+    }
 }

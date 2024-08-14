@@ -4,107 +4,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kalkulator BMI by naurasf</title>
+    <!-- Link css -->
     <link rel="stylesheet" href="css\styles.css">
-    <link rel="stylesheet" href="https://fonts.google.com/specimen/Poppins">
 </head>
 
 <body>
-    <header>
-        <h1 class="main-title"> Kalkulator BMI </h1>
-        <p class="main-title"> Ayo cek berat badan ideal kamu </p>
+
+    <!-- Header body web -->
+    <header class="main-tittle">
+        <h1> Kalkulator BMI </h1>
+        <p> Ayo cek berat badan ideal kamu </p>
     </header>
 
     <main>
+        <!-- Sisi kanan web -->
         <aside>
             <article>
                 <p>
-                    BMI (Body Mass Index) adalah alat sederhana yang dapat membantu anda menentukan apakah perlu
-                    melakukan penyesuaian untuk mencapai atau mempertahankan
-                    berat badan yang ideal.
+                    BMI (Body Mass Index) merupakan alat yang sederhana namun bermanfaat untuk membantu Anda menilai
+                    apakah diperlukan penyesuaian untuk mencapai atau mempertahankan berat badan yang ideal. Gunakanlah
+                    sebagai panduan untuk menjaga kesehatan tubuh Anda dengan lebih baik.
                 </p>
             </article>
 
+            <!-- Form kalkulator BMI -->
             <form>
                 <div>
                     <h3> Jenis Kelamin </h3>
-                    <input type="radio" id="Laki-laki" name="jenis-kelamin" value="Laki-laki"><label for="Laki-laki">
+                    <input onchange="jK()" type="radio" id="Laki-laki" name="jenis-kelamin" value="Laki-laki"><label
+                        for="Laki-laki">
                         Laki-laki</label>
-                    <input type="radio" id="Perempuan" name="jenis-kelamin" value="Perempuan"><label for="Perempuan">
+                    <input onchange="jK()" type="radio" id="Perempuan" name="jenis-kelamin" value="Perempuan"><label
+                        for="Perempuan">
                         Perempuan</label>
                 </div>
 
                 <div>
                     <h3> Usia (Tahun) </h3>
-                    <input type="number">
+                    <input type="number" id="Usia" name="Usia" placeholder="Ex: 25">
                 </div>
 
                 <div>
                     <h3> Berat Badan (Kg) </h3>
-                    <input type="number">
+                    <input type="float" id="Bb" name="Bb" placeholder="Ex: 48.5">
                 </div>
 
                 <div>
-                    <h3> Tinggi Badan (Cm) </h3>
-                    <input type="number">
+                    <h3> Tinggi Badan (M) </h3>
+                    <input type="float" id="Tb" name="Tb" placeholder="Ex: 1.65">
                 </div>
 
                 <div class="form-btn-container">
-                    <button class="button bg-hitung"> Hitung BMI </button>
-                    <button class="button bg-reset"> Reset </button>
+                    <button onclick="hitungBMI(event)" class="button bg-hitung"> Hitung BMI </button>
+                    <button onclick="reset()" class="button bg-reset"> Reset </button>
                 </div>
             </form>
 
+            <!-- Klasifikasi dan penjelasan BMI-->
             <article>
                 <header>
-                    <h2 class="list"> Klasifikasi BMI </h2>
+                    <h2> Klasifikasi BMI </h2>
                     <ul class="list">
                         <li> Kekurangan berat badan: kurang dari 18.5 </li>
                         <li> Normal (ideal): 18.5 - 24.9</li>
                         <li> Kelebihan berat badan: 25 - 29.9</li>
                         <li> Kegemukan (obesitas): 30 atau lebih</li>
                     </ul>
-                    <P> Kalkulator ini dapat digunakan oleh seseorang yang berusia 20 tahun ke atas.
-                        Perlu diingat bahwa Kalkulator BMI ini tidak dapat digunakan untuk ibu hamil dan anak-anak
-                        karena standar BMI yang berbeda.</P>
                 </header>
+                <P> Kalkulator ini cocok untuk usia 20 tahun ke atas, tetapi tidak untuk ibu hamil atau anak-anak karena
+                    standar BMI berbeda.
+                    Ingat, BMI hanya satu dari banyak indikator kesehatan. Untuk penilaian yang lebih akurat,
+                    konsultasikan dengan dokter atau ahli gizi.</P>
             </article>
         </aside>
 
+        <!-- Sisi kiri web-->
         <aside>
             <section>
                 <h3> Hasil </h3>
-
-                <p> isi nya tergantung hasil </p>
-
-                <p>
-                    BMI hanya salah satu indikator kesehatan dan tidak menggantikan penilaian
-                    medis profesional.
-                    Konsultasikan dengan dokter atau ahli gizi untuk mendapatkan saran yang lebih tepat dan komprehensif
-                    mengenai kesehatan anda.</p>
-                
-                    <div class="box">
-                        <p> Penyakit yang dapat terjadi akibat obesitas:</p>
-                        <ul class="list">
-                            <li> Diabetes </li>
-                            <li> Penyakit Jantung</li>
-                            <li> Stroke</li>
-                            <li> Hipertensi </li>
-                            <li> Sleep Apnea</li>
-        
-                        </ul>
-                    </div>
-    
-    
+                <!-- Hasil perhitungan, klasifikasi, dan penjelasan berdasarkan hasil BMI -->
+                <div class="box">
+                    <p id="hasilBMI" class="typing-animation"> </p>
+                    <p id="klasifikasi" class="typing-animation"> </p>
+                </div>
+                <p id="penjelasan" class="slide-in"> </p>
             </section>
         </aside>
     </main>
 
+    <!-- Footer web-->
     <footer>
-        <p>
-            made by Naura
-        </p>
+        <p> Get in touch </p>
+        Naura Soffin Fadhilah </br>
+        <br> Connect</br>
+        <div class="icon">
+            <a href="https://www.instagram.com/nafinfa/" target="_blank"><img src="assets\logo instagram.png"
+                    alt="instagram"></a>
+            <a href="https://x.com/_nafinfa_" target="_blank"><img src="assets\logo twitter.png" alt="twitter"></a>
+            <a href=" https://www.linkedin.com/in/naura-soffin-fadhilah-9289b22b3/" target="_blank"><img
+                    src="assets\logo linkedin.png" alt="linkedin"></a>
+        </div>
     </footer>
+
+    <!-- Link java script -->
+    <script src="js\script.js"></script>
 </body>
 
 </html>
