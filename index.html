@@ -29,67 +29,77 @@
             </article>
 
             <!-- Form kalkulator BMI -->
-            <form>
+            <form onsubmit="validationBMI(event)">
                 <div>
                     <h3> Jenis Kelamin </h3>
-                    <input onchange="jK()" type="radio" id="Laki-laki" name="jenis-kelamin" value="Laki-laki"><label
-                        for="Laki-laki">
-                        Laki-laki</label>
-                    <input onchange="jK()" type="radio" id="Perempuan" name="jenis-kelamin" value="Perempuan"><label
-                        for="Perempuan">
+                    <input onchange="jK()" type="radio" id="laki-laki" name="jenis-kelamin" value="laki-laki"><label
+                        for="laki-laki">
+                        Laki-laki &nbsp; </label>
+                    <input onchange="jK()" type="radio" id="perempuan" name="jenis-kelamin" value="perempuan"><label
+                        for="perempuan">
                         Perempuan</label>
+                    <div id="errgender" class="errinput hidden"></div>
                 </div>
+
 
                 <div>
                     <h3> Usia (Tahun) </h3>
-                    <input type="number" id="Usia" name="Usia" placeholder="Ex: 25">
+                    <input type="number" id="usia" name="usia" placeholder="ex: 25"> &#128394
+                    <div id="errusia" class="errinput hidden"></div>
                 </div>
 
                 <div>
                     <h3> Berat Badan (Kg) </h3>
-                    <input type="float" id="Bb" name="Bb" placeholder="Ex: 48.5">
+                    <input type="float" id="bb" name="bb" placeholder="ex: 48.5"> &#128394
+                    <div id="errbb" class="errinput hidden"></div>
                 </div>
 
                 <div>
                     <h3> Tinggi Badan (M) </h3>
-                    <input type="float" id="Tb" name="Tb" placeholder="Ex: 1.65">
+                    <input type="float" id="tb" name="tb" placeholder="ex: 1.65"> &#128394
+                    <div id="errtb" class="errinput hidden"></div>
                 </div>
 
                 <div class="form-btn-container">
-                    <button onclick="hitungBMI(event)" class="button bg-hitung"> Hitung BMI </button>
-                    <button onclick="reset()" class="button bg-reset"> Reset </button>
+                    <button type="submit" onclick="hitungBMI(bb, tb)" class="button bg-hitung"> Hitung BMI </button>
+                    <button type="button" onclick="resetForm()" class="button bg-reset"> Reset </button>
                 </div>
             </form>
-
             <!-- Klasifikasi dan penjelasan BMI-->
             <article>
                 <header>
                     <h2> Klasifikasi BMI </h2>
                     <ul class="list">
-                        <li> Kekurangan berat badan: kurang dari 18.5 </li>
-                        <li> Normal (ideal): 18.5 - 24.9</li>
-                        <li> Kelebihan berat badan: 25 - 29.9</li>
-                        <li> Kegemukan (obesitas): 30 atau lebih</li>
+                        <li class="blue"> Kekurangan berat badan: &lt 18.5 </li>
+                        <li class="green"> Normal (ideal): 18.5 - 24.9</li>
+                        <li class="orange"> Kelebihan berat badan: 25 - 29.9</li>
+                        <li class="red"> Kegemukan (obesitas): &GreaterEqual; 30</li>
                     </ul>
                 </header>
-                <P> Kalkulator ini cocok untuk usia 20 tahun ke atas, tetapi tidak untuk ibu hamil atau anak-anak karena
-                    standar BMI berbeda.
-                    Ingat, BMI hanya satu dari banyak indikator kesehatan. Untuk penilaian yang lebih akurat,
-                    konsultasikan dengan dokter atau ahli gizi.</P>
             </article>
         </aside>
+
 
         <!-- Sisi kiri web-->
         <aside>
             <section>
-                <h3> Hasil </h3>
+                <h3> Hasil BMI </h3>
                 <!-- Hasil perhitungan, klasifikasi, dan penjelasan berdasarkan hasil BMI -->
                 <div class="box">
-                    <p id="hasilBMI" class="typing-animation"> </p>
-                    <p id="klasifikasi" class="typing-animation"> </p>
+                    <p> Berikut hasil BMI Anda: </p>
+                    <p id="hasil_bmi" class="typing-animation"> 00.00 </p>
+                    <p id="klasifikasi" class="typing-animation"> Hasil BMI Anda akan muncul disini </p>
                 </div>
                 <p id="penjelasan" class="slide-in"> </p>
             </section>
+
+            <article class="note-container">
+                <span class="symbol"> &#128712 </span>
+                    <p class="note"> Kalkulator ini digunakan untuk usia 20 tahun ke atas, tidak untuk ibu hamil atau anak-anak karena
+                    standar BMI berbeda.
+                    Ingat, BMI hanya satu dari banyak indikator kesehatan. Untuk penilaian yang lebih akurat,
+                    konsultasikan dengan dokter atau ahli gizi.</p>
+            </article>
         </aside>
     </main>
 
@@ -97,7 +107,7 @@
     <footer>
         <p> Get in touch </p>
         Naura Soffin Fadhilah </br>
-        <br> Connect</br>
+        <br> connect</br>
         <div class="icon">
             <a href="https://www.instagram.com/nafinfa/" target="_blank"><img src="assets\logo instagram.png"
                     alt="instagram"></a>
@@ -105,6 +115,8 @@
             <a href=" https://www.linkedin.com/in/naura-soffin-fadhilah-9289b22b3/" target="_blank"><img
                     src="assets\logo linkedin.png" alt="linkedin"></a>
         </div>
+        <br>
+        <br>&copy20240814byNaurasf </footerbr>
     </footer>
 
     <!-- Link java script -->
